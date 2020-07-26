@@ -40,6 +40,8 @@ Plug 'vim-scripts/vim-gitgutter'
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'junegunn/fzf', { 'do' : { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
