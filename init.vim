@@ -53,6 +53,9 @@ let g:gruvbox_contrast_dark = "hard"
 nnoremap <silent><C-E> :NERDTreeToggle<CR> 
 autocmd BufEnter * lcd %:p:h
 
+" Search
+noremap <silent>fs :Files<cr> 
+
 " Git
 let g:lightline = {
       \ 'active': {
