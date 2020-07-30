@@ -61,6 +61,11 @@ autocmd BufEnter * lcd %:p:h
 noremap <silent>fs :Files<cr> 
 
 " Git
+nnoremap <silent>ga :G<CR> 
+nnoremap <silent>gc :Gcommit<CR> 
+nnoremap <silent>gp :Gpush<CR> 
+
+" Lightline
 let g:lightline = {
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
@@ -70,4 +75,8 @@ let g:lightline = {
       \   'gitbranch': 'FugitiveHead'
       \ },
       \ }
+
+" GoTo navigation
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent>rr <Plug>(coc-rename)
 
