@@ -63,7 +63,7 @@ noremap <silent>fs :Files<cr>
 " Git
 nnoremap <silent>ga :G<CR> 
 nnoremap <silent>gc :Gcommit<CR> 
-nnoremap <silent>gp :Gpush<CR> 
+nnoremap <silent>gp :Git push origin HEAD<CR>
 
 " Lightline
 let g:lightline = {
