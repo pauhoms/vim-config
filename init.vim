@@ -40,6 +40,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'junegunn/fzf', { 'do' : { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'Yggdroot/indentLine'
 
 call plug#end()
 
@@ -78,6 +79,8 @@ let g:lightline = {
       \ }
 
 " GoTo navigation
-nmap <silent> gd <Plug>(coc-definition)
+nmap <silent>gd <Plug>(coc-definition)
 nmap <silent>rr <Plug>(coc-rename)
 
+" Identation
+let g:indentLine_char_list = ['|', '¦', '┆', '┊']
