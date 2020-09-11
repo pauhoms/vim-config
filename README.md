@@ -1,4 +1,4 @@
-<p><h1 align="c- enter"> 👩‍💻👩‍💻 My vim configuration 👩‍💻👩‍💻 </h1><br></p>
+<p><h1 align="center"> 👩‍💻👩‍💻 My vim configuration 👩‍💻👩‍💻 </h1><br></p>
 
 ## Instalation guide
 - Install in debian and derivatives ➡️  `sudo apt-get install neovim`
