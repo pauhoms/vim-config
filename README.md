@@ -18,4 +18,5 @@ Now we have installed our editor, now we would have to install our plugin manage
 ## Install all plugins
 - First you have to open the neovim ➡️ `nvim .`
 - Then you have to execute the following command ➡️ `:PlugInstall`
+<br>
 Vim should have opened a new tab for us to install the plugins that are defined in vim's configuration
