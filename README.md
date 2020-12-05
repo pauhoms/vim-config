@@ -6,7 +6,8 @@
 ## Plugin Manager
 Now we have installed our editor, now we would have to install our plugin manager.
 - Install Plug-vim  ➡️  
- `sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'`
+ `sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'`
 
 ## Clone my vim configuration
 - Delete the default vim config ➡️ `sudo rm -rf ~/.conf/nvim/` 
