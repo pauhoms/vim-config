@@ -10,8 +10,8 @@ Now we have installed our editor, now we would have to install our plugin manage
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'`
 
 ## Clone my vim configuration
-- Delete the default vim config ➡️ `sudo rm -rf ~/.conf/nvim/` 
-- Clone my vim configuration ➡️ `git clone https://github.com/pauhoms/vim-config.git ~/.conf/nvim/`
+- Delete the default vim config ➡️ `sudo rm -rf ~/.config/nvim/` 
+- Clone my vim configuration ➡️ `git clone https://github.com/pauhoms/vim-config.git ~/.config/nvim/`
 
 ## Install node for my main plugin COC
 - Install nodejs ➡️ `sudo apt install npm`
