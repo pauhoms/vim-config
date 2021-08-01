@@ -24,38 +24,31 @@ set noshowmode
 set cmdheight=2
 set updatetime=50
 set shortmess+=c
-set colorcolumn=80
-set background=light
-highlight ColorColumn ctermbg=0 guibg=lightgrey
+
 
 call plug#begin('~/.vim/plugged')
 
 " Themes
-Plug 'arcticicestudio/nord-vim'
-
-" Tabline
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'gruvbox-community/gruvbox'
 
 "IDE
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree'
+Plug 'vim-scripts/vim-gitgutter'
+Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'junegunn/fzf', { 'do' : { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'Yggdroot/indentLine'
-Plug 'ternjs/tern_for_vim', { 'do' : 'npm install' }
-Plug 'dense-analysis/ale'
-Plug 'pangloss/vim-javascript'
-Plug 'maxmellon/vim-jsx-pretty'
-Plug 'phpactor/phpactor', {'for': 'php', 'do': 'composer install --no-dev -o'}
-Plug 'yaegassy/coc-intelephense', {'do': 'npm install --frozen-lockfile'}
+
 call plug#end()
 
 " Theme
-colorscheme nord
+colorscheme gruvbox
+let g:gruvbox_contrast_dark = "hard"
+let g:gruvbox_invert_tabline=1
+let g:gruvbox_transparent_bg=1
 
 highlight Normal     ctermbg=NONE guibg=NONE
 highlight LineNr     ctermbg=NONE guibg=NONE
@@ -75,8 +68,19 @@ nnoremap <silent>gp :Git push origin HEAD<CR>
 nnoremap <silent>gu :Gpull<CR>
 
 " Lightline
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#buffer_nr_show = 1
-let g:airline#extensions#tabline#enabled = 1
+let g:lightline = {
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'FugitiveHead'
+      \ },
+      \ }
+
+" GoTo navigation
+nmap <silent>gd <Plug>(coc-definition)
+nmap <silent>rr <Plug>(coc-rename)
+
 " Identation
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
