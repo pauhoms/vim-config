@@ -41,6 +41,24 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'junegunn/fzf', { 'do' : { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'Yggdroot/indentLine'
+Plug 'dense-analysis/ale'
+Plug 'airblade/vim-rooter'
+
+" PHP
+Plug 'phpactor/phpactor', {'for': 'php', 'do': 'composer install --no-dev -o'}
+Plug 'yaegassy/coc-intelephense', {'do': 'npm install --frozen-lockfile'}
+
+" JS
+Plug 'pangloss/vim-javascript'
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'ternjs/tern_for_vim', { 'do' : 'npm install' }
+
+" TS
+Plug 'neoclide/coc-tsserver'
+Plug 'neoclide/coc-tslint'
+Plug 'mattn/emmet-vim'
+Plug 'neoclide/coc-css'
+Plug 'neoclide/coc-eslint'
 
 call plug#end()
 
@@ -55,10 +73,11 @@ highlight LineNr     ctermbg=NONE guibg=NONE
 highlight SignColumn ctermbg=NONE guibg=NONE
 
 " Tree
-nnoremap <silent><C-E> :NERDTreeToggle<CR> 
+nnoremap <silent><A-1> :NERDTreeToggle<CR> 
 autocmd BufEnter * lcd %:p:h
 
 " Search
+let g:rooter_patterns = ['.git', 'Makefile', '*.sln', 'build/env.sh']
 noremap <silent>fs :Files<cr> 
 
 " Git
