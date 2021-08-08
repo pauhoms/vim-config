@@ -24,7 +24,11 @@ set noshowmode
 set cmdheight=2
 set updatetime=50
 set shortmess+=c
+filetype
 
+if &filetype == "typescript"
+    set shiftwidth=2
+endif
 
 call plug#begin('~/.vim/plugged')
 
@@ -74,7 +78,14 @@ highlight SignColumn ctermbg=NONE guibg=NONE
 
 " Tree
 nnoremap <silent><A-1> :NERDTreeToggle<CR> 
-autocmd BufEnter * lcd %:p:h
+augroup nerd_loader
+  autocmd!
+  autocmd VimEnter * silent! autocmd! FileExplorer
+  autocmd BufEnter,BufNew *
+        \  if &filetype == "typescript"
+        \|   set shiftwidth=2
+        \| endif
+augroup END
 
 " Search
 let g:rooter_patterns = ['.git', 'Makefile', '*.sln', 'build/env.sh']
@@ -103,3 +114,4 @@ nmap <silent>rr <Plug>(coc-rename)
 
 " Identation
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+
